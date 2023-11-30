@@ -6,7 +6,7 @@
 /*   By: tcharuel <tcharuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 11:58:09 by tcharuel          #+#    #+#             */
-/*   Updated: 2023/11/30 11:58:24 by tcharuel         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:25:19 by tcharuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,8 @@ int	main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
+	if (argc == 3)
+	{
+	}
 	return (0);
 }

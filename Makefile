@@ -6,7 +6,7 @@
 #    By: tcharuel <tcharuel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 13:33:40 by tcharuel          #+#    #+#              #
-#    Updated: 2023/11/30 12:48:47 by tcharuel         ###   ########.fr        #
+#    Updated: 2023/11/30 15:46:58 by tcharuel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,33 +16,25 @@ SERVER = server
 SOURCES_CLIENT = client.c
 SOURCES_SERVER = server.c
 
-OBJECTS_CLIENT = $(SOURCES_CLIENT:.c=.o)
-OBJECTS_SERVER = $(SOURCES_SERVER:.c=.o)
-
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
-LIBFT_DIR = libft/
-LIBFT = libft.a
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
 
 all: $(CLIENT) $(SERVER)
 
-$(CLIENT): $(LIBFT) $(OBJECTS_CLIENT)
-	$(CC) $(CFLAGS) $(OBJECTS_CLIENT) -o $(CLIENT)
+$(CLIENT): $(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $(SOURCES_CLIENT) -L$(LIBFT_DIR) -lft
 
-$(SERVER): $(LIBFT) $(OBJECTS_SERVER)
-	$(CC) $(CFLAGS) $(OBJECTS_SERVER) -o $(SERVER)
+$(SERVER): $(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $(SOURCES_SERVER) -L$(LIBFT_DIR) -lft
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
-	cp $(LIBFT_DIR)$(LIBFT) $(LIBFT)
-
-.c.o:
-	$(CC) $(CFLAGS) -I. -Ilibft -c $< -o ${<:.c=.o}
 
 clean:
-	$(RM) $(OBJECTS_CLIENT) $(OBJECTS_SERVER) $(LIBFT)
 	make -C $(LIBFT_DIR) clean
 
 fclean: clean

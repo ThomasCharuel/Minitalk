@@ -6,15 +6,17 @@
 /*   By: tcharuel <tcharuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 11:58:09 by tcharuel          #+#    #+#             */
-/*   Updated: 2023/11/30 11:58:36 by tcharuel         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:34:22 by tcharuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	(void)argc;
-	(void)argv;
+	pid_t	pid;
+
+	pid = getpid();
+	ft_printf("%d\n", pid);
 	return (0);
 }

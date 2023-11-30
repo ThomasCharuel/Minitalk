@@ -6,11 +6,14 @@
 /*   By: tcharuel <tcharuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 11:59:01 by tcharuel          #+#    #+#             */
-/*   Updated: 2023/11/30 11:59:11 by tcharuel         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:33:29 by tcharuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVER_H
 # define SERVER_H
+
+# include "libft/libft.h"
+# include <sys/types.h>
 
 #endif
