@@ -6,7 +6,7 @@
 /*   By: tcharuel <tcharuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 11:58:09 by tcharuel          #+#    #+#             */
-/*   Updated: 2023/11/30 19:21:49 by tcharuel         ###   ########.fr       */
+/*   Updated: 2023/12/01 09:49:24 by tcharuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(void)
 
 	pid = getpid();
 	ft_printf("%d\n", pid);
-	psa.sa_sigaction = sig_handler;
+	psa.sa_sigaction = &sig_handler;
 	sigaction(SIGUSR1, &psa, NULL);
 	sigaction(SIGUSR2, &psa, NULL);
 	while (pause())

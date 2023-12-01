@@ -6,7 +6,7 @@
 /*   By: tcharuel <tcharuel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 11:58:09 by tcharuel          #+#    #+#             */
-/*   Updated: 2023/11/30 19:21:56 by tcharuel         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:58:13 by tcharuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	send_char_to_server(char c, pid_t pid)
 		else
 			kill(pid, SIGUSR1);
 		i++;
-		usleep(100);
+		usleep(800);
 	}
 }
 
